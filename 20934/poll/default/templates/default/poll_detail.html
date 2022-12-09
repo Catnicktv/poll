@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>{{ poll.subject }}</h2>
+<a href="edit/">修改</a>
+{{ poll.date_created }}
+
+<div><a href="add/">新增選項</a></div>
+<ul>
+    {% for option in option_list %}
+    <li>
+        <a href="/poll/option/{{ option.id }}/">{{ option.title }}</a> - {{ option.count }} 票
+        <a href="/poll/option/{{ option.id }}/edit/">修改</a>
+        <a href="/poll/option/{{ option.id }}/delete/">刪除</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

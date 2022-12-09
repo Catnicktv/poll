@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+<p>
+    確定要刪除「{{ object }}」嗎？
+</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="是的，我要刪除">
+</form>
+{% endblock %}
